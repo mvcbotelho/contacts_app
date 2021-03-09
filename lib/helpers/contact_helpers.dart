@@ -83,7 +83,7 @@ class ContactHelper {
     for (Map m in listMap) {
       listContact.add(Contact.fromMap(m));
     }
-
+    print('listContact: $listContact');
     return listContact;
   }
 
