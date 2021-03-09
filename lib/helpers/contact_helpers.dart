@@ -28,14 +28,14 @@ class ContactHelper {
 
   Future<Database> initDb() async {
     final databasePath = await getDatabasesPath();
-    final path = join(databasePath, "contacts.db");
+    final path = join(databasePath, "newContacts.db");
 
     return await openDatabase(path, version: 1,
         onCreate: (Database db, int newerVersion) async {
-      await db
-          .execute("CREATE TABLE $contactTable($idColumn INTERGER PRIMARY KEY, "
-              "$nameColumn TEXT, $emailColumn TEXT, "
-              "$phoneColumn TEXT, $imageColumn TEXT)");
+      await db.execute("CREATE TABLE $contactTable("
+          "$idColumn INTEGER PRIMARY KEY, "
+          "$nameColumn TEXT, $emailColumn TEXT, "
+          "$phoneColumn TEXT, $imageColumn TEXT)");
     });
   }
 
@@ -83,6 +83,7 @@ class ContactHelper {
     for (Map m in listMap) {
       listContact.add(Contact.fromMap(m));
     }
+
     print('listContact: $listContact');
     return listContact;
   }
