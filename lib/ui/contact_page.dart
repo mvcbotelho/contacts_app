@@ -25,7 +25,9 @@ class _ContactPageState extends State<ContactPage> {
   Contact _editedContact;
 
   var phoneMask = MaskTextInputFormatter(
-      mask: '(##) #####-####', filter: {"#": RegExp(r'[0-9]')});
+    mask: '(##) #####-####',
+    filter: {"#": RegExp(r'[0-9]')},
+  );
 
   @override
   void initState() {
@@ -47,7 +49,7 @@ class _ContactPageState extends State<ContactPage> {
         onWillPop: _requestPop,
         child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.red,
+            backgroundColor: Colors.red[800],
             title: Text(_editedContact.name ?? 'Novo de contato'),
             centerTitle: true,
           ),
@@ -61,7 +63,7 @@ class _ContactPageState extends State<ContactPage> {
               }
             },
             child: Icon(Icons.save),
-            backgroundColor: Colors.red,
+            backgroundColor: Colors.red[800],
           ),
           body: SingleChildScrollView(
             padding: EdgeInsets.all(16.0),
@@ -127,7 +129,7 @@ class _ContactPageState extends State<ContactPage> {
                 children: [
                   Icon(
                     Icons.warning_rounded,
-                    color: Colors.red,
+                    color: Colors.red[800],
                   ),
                   Text(
                     "Descartar alterações",
@@ -147,7 +149,7 @@ class _ContactPageState extends State<ContactPage> {
                 TextButton(
                   child: Text(
                     'Sair',
-                    style: TextStyle(color: Colors.red),
+                    style: TextStyle(color: Colors.red[800]),
                   ),
                   onPressed: () {
                     Navigator.pop(context);
