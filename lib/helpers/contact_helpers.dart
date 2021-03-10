@@ -84,7 +84,6 @@ class ContactHelper {
       listContact.add(Contact.fromMap(m));
     }
 
-    print('listContact: $listContact');
     return listContact;
   }
 

@@ -104,14 +104,11 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
-    print('recContact: $recContact');
-    print('contact: $contact');
+
     if (recContact != null) {
       if (contact != null) {
-        print('=== Editou ===');
         await helper.updateContact(recContact);
       } else {
-        print('=== Salvou ===');
         await helper.saveContact(recContact);
       }
       _getAllContacts();
